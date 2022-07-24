@@ -67,7 +67,6 @@ export default function Albums(props) {
               src={`${item.image}`}
               srcSet={`${item.image}`}
               alt={item.title}
-              loading="lazy"
               width={'100%'}
               height={'100%'}
               onClick={() => {
