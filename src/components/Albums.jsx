@@ -68,6 +68,8 @@ export default function Albums(props) {
               srcSet={`${item.image}`}
               alt={item.title}
               loading="lazy"
+              width={'100%'}
+              height={'100%'}
               onClick={() => {
                 navigate(`/detail/${item.id}`);
               }}

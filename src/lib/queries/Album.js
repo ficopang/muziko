@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const TRACK_LIST = gql`
+export const ALBUM = gql`
   query DetailAlbum($id: String!) {
     album(id: $id) {
       id

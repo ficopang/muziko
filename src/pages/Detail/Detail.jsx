@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Skeleton, Typography } from '@mui/material';
 import { TRACK_LIST } from '../../lib/queries/TrackList';
 import { useQuery } from '@apollo/client';
 import MusicPlayer from '../../components/MusicPlayer';
@@ -12,12 +12,27 @@ export default function Detail() {
       id: id,
     },
   });
-  if (loading) return <h1>Loading</h1>;
-  // if (!loading) console.log(data);
+  if (loading)
+    return (
+      <Box sx={{ paddingTop: '16px', paddingBottom: '50px' }}>
+        <Skeleton variant="text" width="100%" sx={{ marginBottom: '16px' }} />
+        {[...Array(10)].map((_, i) => (
+          <Skeleton
+            variant="rectangular"
+            key={i}
+            width="100%"
+            height={'45vw'}
+            sx={{ marginBottom: '16px' }}
+          />
+        ))}
+      </Box>
+    );
 
   return (
     <Box sx={{ paddingTop: '16px', paddingBottom: '50px' }}>
-      <Typography variant="h5">{data.album.name}</Typography>
+      <Typography variant="h5" sx={{ marginBottom: '16px' }}>
+        {data.album.name}
+      </Typography>
       {data.album.tracks.map((item) => {
         return (
           <MusicPlayer
