@@ -52,7 +52,7 @@ export default function SearchBar() {
         placeholder="Search…"
         inputProps={{ 'aria-label': 'search', width: '100%' }}
         onKeyPress={(e) => {
-          if (e.key === 'Enter') {
+          if (e.key === 'Enter' && e.target.value) {
             navigate('/search/' + e.target.value);
           }
         }}

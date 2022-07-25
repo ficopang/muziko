@@ -40,6 +40,17 @@ export default function Albums(props) {
       </ImageList>
     );
 
+  if (!loading && !data)
+    return (
+      <ImageList sx={{ width: '100%' }}>
+        <ImageListItem key="Subheader" cols={2}>
+          <ListSubheader component="div" sx={{ padding: '0' }}>
+            Artist not found
+          </ListSubheader>
+        </ImageListItem>
+      </ImageList>
+    );
+
   const handleFav = (query) => {
     let newFav = [...fav];
     let found = fav.indexOf(query);
