@@ -12,11 +12,13 @@ export default function Favorites() {
           Favorites
         </ListSubheader>
       </ImageListItem>
-      {fav.map((item, i) => {
-        if (i === 0) return null;
-        if (i === 1) return null;
-        return <Album key={item} id={item}></Album>;
-      })}
+      {fav
+        ? fav.map((item, i) => {
+            if (i === 0) return null;
+            if (i === 1) return null;
+            return <Album key={item} id={item}></Album>;
+          })
+        : ''}
     </ImageList>
   );
 }
