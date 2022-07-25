@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Muziko
+
+Muziko is a web application to find album & track from an artist
+Spotify API: [https://spotify-graphql.up.railway.app](https://spotify-graphql.up.railway.app/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
